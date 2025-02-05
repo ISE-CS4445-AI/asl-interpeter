@@ -2,12 +2,12 @@
 # AI-Project
 Repository containing files and source code for the CS4445 AI module's final capstone project.
 
-**Group name:** <ENTER_GROUP_NAME>  
+**Group name:** GoonAI
   
 **Team members:**
-- Member A - <Student_ID>
-- Member B - <Student_ID>
-- Member C - <Student_ID>
+- Member A - 23369698
+- Member B - 23397179
+- Member C - 
 
 ## Installation/Pre-requisites
 - Mention any libraries or installation requirements to demo your project if necessary.
