@@ -7,7 +7,7 @@ Repository containing files and source code for the CS4445 AI module's final cap
 **Team members:**
 - Member A - 23369698
 - Member B - 23397179
-- Member C - 
+- Member C - 23365498
 
 ## Installation/Pre-requisites
 - Mention any libraries or installation requirements to demo your project if necessary.
