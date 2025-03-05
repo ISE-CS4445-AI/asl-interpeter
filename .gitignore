@@ -51,6 +51,7 @@ coverage.xml
 .pytest_cache/
 cover/
 ASL_Alphabet_Dataset/
+output_coordinates/
 
 # Translations
 *.mo
