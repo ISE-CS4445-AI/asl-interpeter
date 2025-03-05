@@ -50,6 +50,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+ASL_Alphabet_Dataset/
 
 # Translations
 *.mo
