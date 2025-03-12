@@ -3,7 +3,7 @@ import mediapipe as mp
 import os
 import pandas as pd
 from glob import glob
-from hand_detection import HandDetector
+from model_training.hand_detection import HandDetector
 
 class DataProcessor:
     def __init__(self):
