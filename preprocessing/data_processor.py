@@ -10,13 +10,8 @@ class DataProcessor:
         self.detector = HandDetector(static_image_mode=True)
 
     def process_image_folder(self, folder_path, output_csv):
-        """
-        Process all images in a folder and save hand coordinates to CSV
+        # Process images and extract hand coordinates
         
-        Args:
-            folder_path (str): Path to folder containing images
-            output_csv (str): Path to output CSV file
-        """
         image_files = []
         for ext in ['*.jpg', '*.jpeg', '*.png']:
             image_files.extend(glob(os.path.join(folder_path, ext)))

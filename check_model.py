@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import h5py
 
 def inspect_h5_file(file_path):
-    """Inspect the contents of an H5 file without loading the model"""
+    # Check H5 file contents without loading the model
     print(f"Inspecting H5 file: {file_path}")
     
     if not os.path.exists(file_path):
@@ -62,7 +62,7 @@ def inspect_h5_file(file_path):
         print(f"Error inspecting H5 file: {str(e)}")
 
 def try_load_model_with_custom_objects(file_path):
-    """Try to load the model with custom objects to handle compatibility issues"""
+    # Try loading model with custom objects for compatibility
     print(f"\nAttempting to load model with custom objects: {file_path}")
     
     try:
@@ -84,7 +84,7 @@ def try_load_model_with_custom_objects(file_path):
         return None
 
 def check_class_names(file_path):
-    """Check if class names file exists and can be loaded"""
+    # Verify class names file exists and can be loaded
     print(f"\nChecking class names file: {file_path}")
     
     if not os.path.exists(file_path):
@@ -109,8 +109,7 @@ if __name__ == "__main__":
     
     # Try to load the model with custom objects
     model = try_load_model_with_custom_objects(model_path)
-    
-    # Check class names
+
     class_names = check_class_names(class_names_path)
     
     # Print TensorFlow and Keras versions

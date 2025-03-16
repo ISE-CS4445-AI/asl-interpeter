@@ -21,7 +21,7 @@ class HandDetector:
         self.class_names = class_names
 
     def get_relative_coordinates(self, hand_landmarks):
-        """Get coordinates relative to wrist, matching training data format"""
+        # Get coordinates relative to wrist position
         coordinates = []
         wrist = hand_landmarks.landmark[0]
         
@@ -35,7 +35,7 @@ class HandDetector:
         return np.array(coordinates)
 
     def preprocess_coordinates(self, coords):
-        """Preprocess coordinates to match model input requirements"""
+        # Format coordinates for model input
         # Ensure coordinates are in the correct shape (21, 3)
         if coords.shape != (21, 3):
             raise ValueError(f"Expected shape (21, 3), got {coords.shape}")
@@ -121,15 +121,14 @@ class HandDetector:
         self.hands.close()
 
 def load_model_with_compatibility(model_path):
-    """Load model with compatibility fixes for different Keras versions"""
+    # Load model with version compatibility fixes
     print(f"Loading model from: {model_path}")
     
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model file not found: {model_path}")
     
-    # Try different approaches to load the model
     try:
-        # Approach 1: Load with tf.keras.models.load_model with compile=False
+
         print("Trying to load model with compile=False...")
         model = tf.keras.models.load_model(model_path, compile=False)
         print("Model loaded successfully!")
@@ -138,7 +137,7 @@ def load_model_with_compatibility(model_path):
         print(f"First approach failed: {str(e1)}")
         
         try:
-            # Approach 2: Load with custom objects
+            # Try with custom objects
             print("Trying to load model with custom objects...")
             custom_objects = {
                 'InputLayer': tf.keras.layers.InputLayer
@@ -150,7 +149,7 @@ def load_model_with_compatibility(model_path):
             print(f"Second approach failed: {str(e2)}")
             
             try:
-                # Approach 3: Convert to SavedModel format and reload
+                # Try SavedModel format
                 print("Trying to convert to SavedModel format...")
                 # Create a temporary directory for the SavedModel
                 temp_dir = "temp_saved_model"
@@ -163,7 +162,7 @@ def load_model_with_compatibility(model_path):
             except Exception as e3:
                 print(f"Third approach failed: {str(e3)}")
                 
-                # Final approach: Use h5py to extract weights and rebuild model
+                # Final fallback
                 print("Trying to rebuild model from scratch...")
                 try:
                     # Create a simple LSTM model with the same architecture
@@ -200,7 +199,7 @@ def load_model_with_compatibility(model_path):
                     raise Exception("Could not load model with any method")
 
 def load_class_names(class_names_path):
-    """Load class names from numpy file"""
+    # Load gesture class names from file
     print(f"Loading class names from: {class_names_path}")
     
     if not os.path.exists(class_names_path):
