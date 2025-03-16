@@ -10,6 +10,12 @@ Repository containing files and source code for the CS4445 AI module's final cap
 - Member C - 23365498
 
 ## Installation/Pre-requisites
-- Mention any libraries or installation requirements to demo your project if necessary.
-- If it is a Jupyter Notebook, ensure all code cells are run and outputs are displayed. The code cells will not be run again when project is being evaluated.
-  - You can delete this section from the README if this is the case.
+
+To run this project, youll need:
+
+1. Python 3.10 installed
+2. Create a venv with python 3.10
+3. Then run 'pip install -r requirements.txt'
+
+Then everyone should work as expected!
+
