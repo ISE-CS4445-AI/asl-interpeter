@@ -2,7 +2,7 @@
 # AI-Project
 Repository containing files and source code for the CS4445 AI module's final capstone project.
 
-**Group name:** GoonAI
+**Group name:** ASL-Interpreter
   
 **Team members:**
 - Member A - 23369698
