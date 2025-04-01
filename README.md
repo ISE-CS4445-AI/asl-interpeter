@@ -19,3 +19,4 @@ To run this project, youll need:
 
 Then everyone should work as expected!
 
+Example: https://imgur.com/a/kg4PaEC
